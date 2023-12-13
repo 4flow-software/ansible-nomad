@@ -5,6 +5,8 @@
 os_supported_matrix:
   Archlinux:
     min_version: ''
+  Almalinux:
+    min_version: ''
   Flatcar:
     min_version: ''
   # RHEL-based
