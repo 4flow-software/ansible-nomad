@@ -222,6 +222,11 @@ The role defines most of its variables in `defaults/main.yml`:
 - Deployment garbage collection threshold
 - Default value: **1h**
 
+### `nomad_batch_eval_gc_threshold`
+
+- Batch job garbage collection threshold
+- Default value: **24h**
+
 ### `nomad_encrypt_enable`
 
 - Enable Gossip Encryption even if `nomad_encrypt` is not set
