@@ -81,13 +81,13 @@ vault {
     tls_skip_verify = {{ nomad_vault_tls_skip_verify | bool | lower }}
     namespace = "{{ nomad_vault_namespace }}"
     create_from_role = "{{ nomad_vault_create_from_role }}"
-{%if nomad_node_role != 'client' %}
 {% if not nomad_vault_identity_enabled %}
     allow_unauthenticated = {{ nomad_vault_allow_unauthenticated | bool | lower }}
     task_token_ttl = "{{ nomad_vault_task_token_ttl }}"
     token = "{{ nomad_vault_token }}"
 {% else %}
     jwt_auth_backend_path = "{{ nomad_vault_identity_auth_backend_path }}"
+{% if nomad_node_role != 'client' %}
     default_identity {
       aud = ["{{ nomad_vault_identity_auth_default_aud }}"]
       ttl = "{{ nomad_vault_identity_auth_default_ttl }}"
