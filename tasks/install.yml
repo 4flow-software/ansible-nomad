@@ -118,3 +118,4 @@
   become: false
   tags: installation
   delegate_to: 127.0.0.1
+  changed_when: false
